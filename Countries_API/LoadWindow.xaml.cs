@@ -1,32 +1,18 @@
 ﻿
 using Library.Models;
 using Library.Services;
-using Microsoft.Toolkit.Forms.UI.Controls;
-using Microsoft.Toolkit.Win32.UI.Controls.Interop.WinRT;
 using Svg;
 using System;
 using System.Collections.Generic;
-using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
-using System.Linq;
 using System.Net;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
 
 namespace Countries_API
 {
-    /// <summary>
-    /// Interaction logic for LoadWindow.xaml
-    /// </summary>
+
     public partial class LoadWindow : Window
     {
         #region Atributos        
@@ -42,13 +28,13 @@ namespace Countries_API
         {
             InitializeComponent();
 
-            networkService = new NetworkService();//aqui é para instanciar o serviço que criei no atributo lá em cima
+            networkService = new NetworkService();
             apiService = new ApiService();
             dataService = new DataService();
             dialogService = new DialogService();
             Countries = new List<Country>();
-            
-            //3ºPasso: Criar o método para carregar as taxas ao inicializar a API
+
+
             LoadInfoAsync();
         }
 
@@ -61,20 +47,20 @@ namespace Countries_API
         private async Task LoadInfoAsync()
         {
             Progress<ProgressReport> progress = new Progress<ProgressReport>();
-            progress.ProgressChanged += ReportProgress;            
+            progress.ProgressChanged += ReportProgress;
 
             var connection = networkService.CheckConnection();
 
 
-            if (!connection.IsSuccess)//Se a resposta não teve sucesso, ou seja, não foi conectado, corre o codigo abaixo
+            if (!connection.IsSuccess)
             {
-                lblStatus.Content = "Loading...";//meu label status vai apresentar 
-                
-                load = false;//trago minha variavel bool para false
-                             //lblStatus.Content = "Not Connection to the Internet";// e informo que foi completado mas com a minha base de dados local
+                lblStatus.Content = "Loading...";
+
+                load = false;
+
                 await LoadLocalCountries();
                 lblStatus.Content = "Loading Complete! Only local data base info.";
-                
+
 
             }
             else
@@ -86,7 +72,7 @@ namespace Countries_API
                 await LoadApiCovidAsync();
                 load = true;
                 lblStatus.Content = "Loading Complete";
-                
+
 
             }
 
@@ -105,12 +91,12 @@ namespace Countries_API
                 await dataService.SaveData(Countries, progress);
                 lblStatus.Content = "Saving Complete";
                 lblStatus.Content = "Loaded Successfully" + Environment.NewLine + "          Online";
-                
+
             }
             else
             {
                 lblStatus.Content = "Loaded Successfully" + Environment.NewLine + "        Offline";
-                
+
             }
             MainWindow main = new MainWindow(Countries, covidCases, load);
             main.Show();
@@ -136,7 +122,7 @@ namespace Countries_API
 
             var response = await apiService.GetCountry("http://restcountries.eu", "/rest/v2/all", progress);
 
-            Countries = (List<Country>)response.Result;           
+            Countries = (List<Country>)response.Result;
         }
         #endregion
 
@@ -223,11 +209,11 @@ namespace Countries_API
 
             }
 
-            
+
         }
         #endregion
 
 
-        
+
     }
 }

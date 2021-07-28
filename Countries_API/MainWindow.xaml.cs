@@ -37,9 +37,9 @@ namespace Countries_API
 
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
-            foreach (var country in _result)//busco na minha lista dos países o país
+            foreach (var country in _result)
             {
-                if (tbCountries.Text == country.name)//vejo se o país que selecionei for igual o nome do país que está na lista de países, lê as informações abaixo
+                if (tbCountries.Text == country.name)
                 {
                     lblCountry.Content = UnavailableInfo(country.name);
                     textName.Text = UnavailableInfo(country.name);
@@ -123,23 +123,23 @@ namespace Countries_API
 
                     //-------------------------FLAGS VIEW------------------------------
 
-                    //busco minha imagem guardada na pasta do diretorio já criado
+                    
                     string fileNameFlags = Environment.CurrentDirectory + "/Flags" + $"/{country.alpha3Code.ToLower()}.jpg";
 
-                    //Converto o meu ficheiro para ser apresentado na imagem do projecto
+                    
                     BitmapImage img = new BitmapImage();
-                    img.BeginInit();//mando executar
-                    if (File.Exists(fileNameFlags))//se a bandeira carregou no Uri
+                    img.BeginInit();
+                    if (File.Exists(fileNameFlags))
                     {
-                        img.UriSource = new Uri(fileNameFlags);//identifico ela
+                        img.UriSource = new Uri(fileNameFlags);
                     }
-                    else//caso contrário
+                    else
                     {
                         img.UriSource = new Uri(Environment.CurrentDirectory + "/ImageUnavailable.png");//mando carregar trazendo ela do meu diretorio
                                                                                                         //imageFlag.Stretch = Stretch.None;//depois mando identificar
                     }
                     img.EndInit();
-                    imageFlag.Source = img;//no final, mando ler a bandeira
+                    imageFlag.Source = img;
                 }
             }
 
