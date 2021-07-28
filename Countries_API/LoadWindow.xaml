@@ -1,0 +1,21 @@
+﻿<Window x:Class="Countries_API.LoadWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Countries_API"
+        mc:Ignorable="d" WindowStartupLocation="CenterScreen"
+        Title="Load Info" Height="600" Width="900" Icon="icons8_load_balancer_96px_2.png" MinWidth="100" MinHeight="300">
+    <Grid Margin="0,0,0,-6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="655*"/>
+            <ColumnDefinition Width="137*"/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.ColumnSpan="2">
+            <MediaElement x:Name="VideoLoad" Margin="0" Source="D:\Projetos\Countries_API\Countries_API\VideoLoad.wmv" LoadedBehavior="Play" Stretch="Fill" Height="580" />
+        </StackPanel>
+        <ProgressBar x:Name="ProgressBarLoad" Height="25" Margin="230,385,89,0" VerticalAlignment="Top" Background="#FFFDFDFD" Value="0" BorderBrush="#FFBCBCBC" Foreground="#FF0D3CDC"/>
+        <Label x:Name="lblStatus" Content="" FontSize="24" Foreground="#FFB01F1F" Margin="235,215,89,0" VerticalAlignment="Top" RenderTransformOrigin="0.263,0" FontStyle="Italic" Height="110" HorizontalAlignment="Center"/>
+        <TextBlock x:Name="progressPercentage" Text="{Binding ElementName=ProgressBarLoad, Path=Value, StringFormat={}{0:0}%}" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="415,420,278,135" Width="45" Foreground="#FFB01F1F" FontWeight="Bold" Height="20" TextAlignment="Center" />
+    </Grid>
+</Window>

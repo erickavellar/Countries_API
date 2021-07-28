@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31402.337
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API_COVID", "API_COVID\API_COVID.csproj", "{12B88BED-CDC8-4CC5-A3D5-C726604445CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12B88BED-CDC8-4CC5-A3D5-C726604445CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B88BED-CDC8-4CC5-A3D5-C726604445CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12B88BED-CDC8-4CC5-A3D5-C726604445CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12B88BED-CDC8-4CC5-A3D5-C726604445CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {237C0877-1471-4A41-BE92-2FBEA74546C0}
+	EndGlobalSection
+EndGlobal

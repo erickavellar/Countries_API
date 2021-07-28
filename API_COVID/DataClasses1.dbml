@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="Covidapierick" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=Covidapierick.mssql.somee.com;Initial Catalog=Covidapierick;Persist Security Info=True;User ID=erickavellar_SQLLogin_1" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CovidapierickConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Covid_Cases" Member="Covid_Cases">
+    <Type Name="Covid_Case">
+      <Column Name="Country" Type="System.String" DbType="VarChar(50) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="TotalCases" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalDeths" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalRecovery" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="TotalTests" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </Type>
+  </Table>
+</Database>
